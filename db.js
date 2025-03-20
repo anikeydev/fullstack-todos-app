@@ -1,11 +1,10 @@
 import pg from 'pg'
-import { v4 } from 'uuid'
 
 const { Client } = pg
 
 const client = new Client({
-  user: 'server',
-  password: 'vdbcr#8v',
+  user: 'postgres',
+  password: '1q1q1q',
   host: 'localhost',
   port: 5001,
   database: 'mytodos',
@@ -21,7 +20,7 @@ export const selectAll = async () => {
 export const insertTodo = async (newTodo) => {
   const queryInsert = {
     text: 'INSERT INTO todos (id, title, completed) VALUES($1, $2, $3)',
-    values: [v4(), newTodo.title, false],
+    values: [newTodo.id, newTodo.title, false],
   }
 
   const res = await client.query(queryInsert)
@@ -36,8 +35,20 @@ export const deleteTodo = async (id) => {
   return await client.query(queryDelete)
 }
 
-// console.log(await insert({ title: 'Добавить удаление' }))
+export const updateTodo = async (id, newTodo) => {
+  const queryUpdate = {
+    text: `UPDATE todos SET id='${id}', title='${newTodo.title}', completed='${newTodo.completed}' WHERE id='${id}'`,
+  }
+  return await client.query(queryUpdate)
+}
 
-// await deleteTodo('43acfc02-218f-4407-a69e-a45a66ac1357')
+// console.log(
+//   await updateTodo('e08bcf39-03f3-43f3-8639-8d899943e8e0', {
+//     title: 'Добавить удаление',
+//     completed: false,
+//   })
+// )
+
+// await deleteTodo('da786dd9-6629-4cd8-bef9-7a035dedb937')
 
 // console.log(await selectAll())
