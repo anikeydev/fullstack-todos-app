@@ -1,23 +1,13 @@
 import ItemTodo from './ItemTodo'
+import { useSelector, useDispatch } from 'react-redux'
 
 export default function ListTodo() {
-  const todos = [
-    {
-      id: '1',
-      title: 'Go To Work',
-      completed: false,
-    },
-    {
-      id: '2',
-      title: 'learn',
-      completed: false,
-    },
-  ]
+  const todosDB = useSelector((state) => state.todos)
 
   return (
     <div className="p-4 pb-3 bg-dark bg-opacity-75 rounded shadow">
-      {todos.map((todo) => (
-        <ItemTodo todo={todo} />
+      {todosDB.map((todo) => (
+        <ItemTodo key={todo.id} todo={todo} />
       ))}
     </div>
   )

@@ -10,7 +10,7 @@ export default function ItemTodo(props) {
           role="button"
           checked={completed}
         />
-        <strong className={completed && 'text-decoration-line-through'}>
+        <strong className={completed ? 'text-decoration-line-through' : ''}>
           {title}
         </strong>
       </div>
