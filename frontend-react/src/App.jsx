@@ -1,5 +1,16 @@
-export default function App() {
-  const [count, setCount] = useState(0)
+import { BrowserRouter, Routes, Route } from 'react-router'
+import TodosLayout from './routes/TodosLayout'
+import LoginLayout from './routes/LoginLayout'
+import RegisterLayout from './routes/RegisterLayout'
 
-  return <h1>Hello React</h1>
+export default function App() {
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<TodosLayout />} />
+        <Route path="/login" element={<LoginLayout />} />
+        <Route path="/register" element={<RegisterLayout />} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
