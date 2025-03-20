@@ -3,8 +3,8 @@ import pg from 'pg'
 const { Client } = pg
 
 const client = new Client({
-  user: 'postgres',
-  password: '1q1q1q',
+  user: 'server',
+  password: process.env.DBPASS || 'vdbcr#8v',
   host: 'localhost',
   port: 5001,
   database: 'mytodos',
