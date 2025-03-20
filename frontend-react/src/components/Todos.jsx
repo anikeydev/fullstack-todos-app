@@ -1,7 +1,11 @@
+import AddTodo from './AddTodo'
+import ListTodo from './ListTodos'
+
 export default function Todos() {
   return (
     <div>
-      <h3>Todos list: </h3>
+      <AddTodo />
+      <ListTodo />
     </div>
   )
 }

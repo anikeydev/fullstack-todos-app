@@ -4,7 +4,7 @@ export default function Header() {
   let navigate = useNavigate()
 
   return (
-    <header className="d-flex justify-content-between mb-5 bg-dark p-4 text-white bg-opacity-75 rounded-bottom shadow">
+    <header className="d-flex justify-content-between mb-4 bg-dark p-4 text-white bg-opacity-75 rounded-bottom shadow">
       <h1 role="button" onClick={() => navigate('/')}>
         Todos
       </h1>
