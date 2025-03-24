@@ -1,0 +1,26 @@
+{
+  "name": "todos-server",
+  "version": "1.0.0",
+  "description": "this is todos server",
+  "keywords": [
+    "nodejs",
+    "express",
+    "postgresql"
+  ],
+  "license": "ISC",
+  "author": "Anikey Vladislav",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "cros": "^1.0.1",
+    "express": "^4.21.2",
+    "pg": "^8.14.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}
